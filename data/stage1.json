@@ -27,7 +27,7 @@
         {
             "metric_type": "项目签单",
             "prev_value": "-19%",
-            "curr_value": "-14%",
+            "curr_value": "-20%",
             "unit": "%",
             "is_higher_better": true,
             "special_category": "growth"
