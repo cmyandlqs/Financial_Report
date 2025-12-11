@@ -1,0 +1,158 @@
+{
+    "meta_info": {
+        "deadline_date": "8.31",
+        "report_stage": "Stage 4",
+        "module": "Critical Actions"
+    },
+    "stage3_gap_context": {
+        "gap1_focus": "老客转化效率不足",
+        "gap2_focus_risk": "逾期超3月坏账风险",
+        "gap2_focus_process": "里程碑未完成导致回款滞后"
+    },
+    "action_lists_data": [
+        {
+            "list_id": "LIST1",
+            "title": "项目客户复购清单",
+            "gap_ref": "GAP1",
+            "target_segment": "今年未复购，但有复购线索/机会的客户",
+            "total_count": 96,
+            "strategy_context": {
+                "early_stage_focus": "明确需求（本部接待、方案交流）与预算",
+                "late_stage_focus": "跟单五问（需求、预算、竞争、决策链、排程）"
+            },
+            "personnel_details": [
+                {
+                    "name": "未绑定客户责任PM",
+                    "value": "21家"
+                },
+                {
+                    "name": "周石",
+                    "value": "11家"
+                },
+                {
+                    "name": "袁槟",
+                    "value": "9家"
+                },
+                {
+                    "name": "曾浩文",
+                    "value": "7家"
+                },
+                {
+                    "name": "徐博文",
+                    "value": "7家"
+                },
+                {
+                    "name": "刘家欣",
+                    "value": "7家"
+                },
+                {
+                    "name": "周冠",
+                    "value": "6家"
+                },
+                {
+                    "name": "邹传炳",
+                    "value": "6家"
+                },
+                {
+                    "name": "王宇",
+                    "value": "6家"
+                },
+                {
+                    "name": "陈波",
+                    "value": "5家"
+                },
+                {
+                    "name": "王帅欣",
+                    "value": "4家"
+                },
+                {
+                    "name": "李晓旋",
+                    "value": "4家"
+                },
+                {
+                    "name": "王晓璇",
+                    "value": "1家"
+                }
+            ]
+        },
+        {
+            "list_id": "LIST2",
+            "title": "项目应收清单（里程碑已完成&应收逾期超3月）",
+            "gap_ref": "GAP2-HighRisk",
+            "action_instruction": "协同销售尽快催款（催款函/律师函），若烂账及时作废",
+            "total_amount": "463w",
+            "personnel_details": [
+                {
+                    "name": "张晨",
+                    "value": "138w"
+                },
+                {
+                    "name": "张辉",
+                    "value": "100w"
+                },
+                {
+                    "name": "李映钰",
+                    "value": "79w"
+                },
+                {
+                    "name": "马俊峰",
+                    "value": "51w"
+                }
+            ]
+        },
+        {
+            "list_id": "LIST3",
+            "title": "项目应收清单（里程碑未完成&里程碑未超期）",
+            "gap_ref": "GAP2-Process",
+            "action_instruction": "项目组长例会LTC盘点，重新刷新这一批里程碑基准完成时间，并严格按照基准监控里程碑执行",
+            "total_amount": "1171w",
+            "personnel_details": [
+                {
+                    "name": "周冠",
+                    "value": "220w"
+                },
+                {
+                    "name": "曾浩文",
+                    "value": "191w"
+                },
+                {
+                    "name": "王宇",
+                    "value": "135w"
+                },
+                {
+                    "name": "邹传炳",
+                    "value": "115w"
+                },
+                {
+                    "name": "周石",
+                    "value": "113w"
+                }
+            ]
+        },
+        {
+            "list_id": "LIST4",
+            "title": "无合同清单（项目绑定的合同数=0）",
+            "gap_ref": "Compliance",
+            "action_instruction": "确认铁三角确认合同收回时间，收回概率、当前困难、需要的资源&协助、是否需要发无合同催告函",
+            "total_amount": "267w",
+            "personnel_details": [
+                {
+                    "name": "马俊峰",
+                    "value": "85w"
+                },
+                {
+                    "name": "哈晨",
+                    "value": "65w"
+                },
+                {
+                    "name": "张辉",
+                    "value": "52w"
+                },
+                {
+                    "name": "李映钰",
+                    "value": "47w"
+                }
+            ]
+        }
+    ]
+}

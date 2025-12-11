@@ -1,0 +1,88 @@
+{
+    "meta_info": {
+        "report_stage": "Stage 3",
+        "module": "GAPs Breakdown"
+    },
+    "input_context": {
+        "stage2_critical_shortcomings": [
+            "项目签单",
+            "项目回款"
+        ],
+        "notes": "来源于Stage2的现状分析结论"
+    },
+    "gap_details": {
+        "项目签单": {
+            "is_star_metric": true,
+            "title_desc": "同比下降14%",
+            "diagnosis_summary": [
+                "项目新客的机会挖掘和储备不足",
+                "项目老客的机会转化效率需要加速"
+            ],
+            "factors": [
+                {
+                    "factor_name": "(项目新购)非项目合作客户-项目机会储备",
+                    "value_change": "同期下降7%",
+                    "metric_logic": "New_Customer_Opportunity"
+                },
+                {
+                    "factor_name": "(项目复购)项目合作客户-项目签单",
+                    "value_change": "同期下降135w",
+                    "metric_logic": "Old_Customer_Signing"
+                }
+            ]
+        },
+        "项目回款": {
+            "title_desc": "还有很大回收空间",
+            "diagnosis_summary": [
+                "“里程碑已完成且逾期超3月的应收”",
+                "“里程碑未完成未超期”需要优先解决"
+            ],
+            "metric_tree_root": {
+                "metric_name": "当前25年项目应收",
+                "value": "2398w",
+                "children": [
+                    {
+                        "metric_name": "里程碑已完成",
+                        "value": "621w",
+                        "children": [
+                            {
+                                "metric_name": "未逾期应收",
+                                "value": "53w"
+                            },
+                            {
+                                "metric_name": "已逾期应收",
+                                "value": "568w",
+                                "children": [
+                                    {
+                                        "metric_name": "逾期超3月应收",
+                                        "value": "463w",
+                                        "group_breakdown": "23组(123w)、33组(340w)"
+                                    },
+                                    {
+                                        "metric_name": "逾期小于3月应收",
+                                        "value": "105w"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "metric_name": "里程碑未完成",
+                        "value": "1777w",
+                        "children": [
+                            {
+                                "metric_name": "里程碑未超期应收",
+                                "value": "1171w",
+                                "group_breakdown": "23组(399w)、33组(772w)"
+                            },
+                            {
+                                "metric_name": "里程碑超期应收",
+                                "value": "606w"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

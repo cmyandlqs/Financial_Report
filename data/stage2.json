@@ -1,0 +1,132 @@
+{
+    "report_meta": {
+        "region": "华中",
+        "department": "项目运营中心"
+    },
+    "critical_context": {
+        "strategies": [
+            "项目客户复购",
+            "里程碑应收催收"
+        ],
+        "manual_override": ""
+    },
+    "core_performance": {
+        "metric_name": "项目实施回款-k",
+        "target_view": {
+            "completion_rate": 0.31,
+            "gap_value": -515.0,
+            "unit": "w",
+            "groups": [
+                {
+                    "name": "23组",
+                    "value": "53%"
+                },
+                {
+                    "name": "33组",
+                    "value": "16%"
+                }
+            ]
+        },
+        "yoy_view": {
+            "growth_rate": -0.37,
+            "diff_value": -139.0,
+            "groups": [
+                {
+                    "name": "23组",
+                    "desc": "+272%，同期多回118w"
+                },
+                {
+                    "name": "33组",
+                    "desc": "-78%，同期少回256w"
+                }
+            ]
+        },
+        "forecast_view": {
+            "annual_rate": 1.03,
+            "expectation_text": "年底100%达成目标是有预期的",
+            "groups": [
+                {
+                    "name": "23组",
+                    "value": "70%"
+                },
+                {
+                    "name": "33组",
+                    "value": "89%"
+                },
+                {
+                    "name": "剩余部分",
+                    "value": "需靠区域项目签单转化"
+                }
+            ]
+        }
+    },
+    "breakdown_metrics": [
+        {
+            "name": "项目签单",
+            "yoy_rate": -0.14,
+            "diff_value": 212.0,
+            "diff_direction": "down",
+            "context_note": "项目应收的储备能力在下滑",
+            "details": [
+                {
+                    "name": "zhangchen",
+                    "value": "+135%"
+                },
+                {
+                    "name": "yingyu",
+                    "value": "+47%"
+                },
+                {
+                    "name": "markus",
+                    "value": "-48%"
+                },
+                {
+                    "name": "jflszz",
+                    "value": "-63%"
+                }
+            ]
+        },
+        {
+            "name": "项目回款",
+            "yoy_rate": -0.03,
+            "diff_value": -34.0,
+            "diff_direction": "down",
+            "context_note": "回款效率正常，和去年水平持平",
+            "details": [
+                {
+                    "name": "23组",
+                    "value": "+52%"
+                },
+                {
+                    "name": "33组",
+                    "value": "-25%"
+                }
+            ]
+        },
+        {
+            "name": "供应商付款",
+            "yoy_rate": 0.16,
+            "diff_value": 92.0,
+            "diff_direction": "up",
+            "context_note": "大部分是24年压款的清淤",
+            "details": [
+                {
+                    "name": "23组",
+                    "value": "+15%"
+                },
+                {
+                    "name": "33组",
+                    "value": "+17%"
+                }
+            ]
+        },
+        {
+            "name": "内部成本",
+            "yoy_rate": 0.07,
+            "diff_value": 12.0,
+            "diff_direction": "up",
+            "context_note": "起伏基本和人员变化对应",
+            "details": []
+        }
+    ]
+}

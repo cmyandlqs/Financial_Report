@@ -1,0 +1,228 @@
+{
+    "report_context": {
+        "_desc": "【元数据域】控制报告生成的上下文参数，通常来自前端筛选器或用户配置",
+        "area_name": "华中",
+        "department_name": "片区联席运营组 / 项目侧",
+        "accounting_period": "2025年7月",
+        "fiscal_year": "2025"
+    },
+    "kpi_dashboard_data": {
+        "_desc": "【指标看板域】扁平化的核心经营指标数据，包含同环比、目标达成与预测",
+        "performance_k": {
+            "_desc": "核心KPI：项目实施回款-k",
+            "metric_name": "项目实施回款-k",
+            "period_status": {
+                "_desc": "当期执行情况",
+                "prev_mom_value": "30%",
+                "curr_mom_value": "31%",
+                "unit": "%"
+            },
+            "target_status": {
+                "_desc": "目标达成情况",
+                "completion_rate": 0.31,
+                "gap_value": -515.0,
+                "unit": "w"
+            },
+            "yoy_status": {
+                "_desc": "同比历史情况",
+                "growth_rate": -0.37,
+                "diff_value": -139.0
+            },
+            "forecast_status": {
+                "_desc": "未来预测情况",
+                "annual_rate": 1.03
+            },
+            "group_breakdown": [
+                {
+                    "name": "23组",
+                    "desc": "进度53%，同比+272%(多回118w)"
+                },
+                {
+                    "name": "33组",
+                    "desc": "进度16%，同比-78%(少回256w)"
+                }
+            ]
+        },
+        "project_signing": {
+            "_desc": "指标：项目签单",
+            "metric_name": "项目签单",
+            "period_status": {
+                "prev_mom_value": "-19%",
+                "curr_mom_value": "-14%",
+                "unit": "%"
+            },
+            "yoy_status": {
+                "growth_rate": -0.14,
+                "diff_value": 212.0,
+                "unit": "w"
+            },
+            "attribution_factors": {
+                "_desc": "归因因子拆解（新客vs老客）",
+                "new_customer_opportunity": {
+                    "factor_name": "(项目新购)非项目合作客户-项目机会储备",
+                    "value_change": "同期下降7%"
+                },
+                "old_customer_signing": {
+                    "factor_name": "(项目复购)项目合作客户-项目签单",
+                    "value_change": "同期下降135w"
+                }
+            },
+            "group_breakdown": [
+                {
+                    "name": "zhangchen",
+                    "value": "+135%"
+                }
+            ]
+        },
+        "project_collection": {
+            "_desc": "指标：项目回款",
+            "metric_name": "项目回款",
+            "period_status": {
+                "prev_mom_value": "-10%",
+                "curr_mom_value": "-3%",
+                "unit": "%"
+            },
+            "yoy_status": {
+                "growth_rate": -0.03,
+                "diff_value": -34.0,
+                "unit": "w"
+            },
+            "group_breakdown": [
+                {
+                    "name": "23组",
+                    "value": "+52%"
+                }
+            ]
+        },
+        "supplier_payment": {
+            "_desc": "指标：供应商付款",
+            "metric_name": "供应商付款",
+            "period_status": {
+                "prev_mom_value": "12%",
+                "curr_mom_value": "16%",
+                "unit": "%"
+            },
+            "yoy_status": {
+                "growth_rate": 0.16,
+                "diff_value": 92.0,
+                "unit": "w"
+            },
+            "group_breakdown": [
+                {
+                    "name": "23组",
+                    "value": "+15%"
+                }
+            ]
+        },
+        "internal_cost": {
+            "_desc": "指标：内部成本",
+            "metric_name": "内部成本",
+            "period_status": {
+                "prev_mom_value": "359w",
+                "curr_mom_value": "267w",
+                "unit": "w"
+            },
+            "yoy_status": {
+                "growth_rate": 0.07,
+                "diff_value": 12.0,
+                "unit": "w"
+            }
+        }
+    },
+    "structural_analysis_data": {
+        "_desc": "【多维分析域】复杂的嵌套结构数据，用于深度归因分析（如指标树）",
+        "receivable_aging_tree": {
+            "_desc": "项目应收账龄树状结构，用于分析回款滞后原因",
+            "root_metric": "当前25年项目应收",
+            "total_value": "2398w",
+            "structure": [
+                {
+                    "category": "里程碑已完成",
+                    "value": "621w",
+                    "sub_items": [
+                        {
+                            "status": "未逾期应收",
+                            "value": "53w"
+                        },
+                        {
+                            "status": "已逾期应收",
+                            "value": "568w",
+                            "breakdown": [
+                                {
+                                    "detail": "逾期超3月应收",
+                                    "value": "463w",
+                                    "group_info": "23组(123w)、33组(340w)"
+                                },
+                                {
+                                    "detail": "逾期小于3月应收",
+                                    "value": "105w"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "category": "里程碑未完成",
+                    "value": "1777w",
+                    "sub_items": [
+                        {
+                            "status": "里程碑未超期应收",
+                            "value": "1171w",
+                            "group_info": "23组(399w)、33组(772w)"
+                        },
+                        {
+                            "status": "里程碑超期应收",
+                            "value": "606w"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "operational_lists_data": {
+        "_desc": "【执行清单域】行级明细数据，用于支撑具体的行动计划",
+        "list_repurchase_opportunity": {
+            "_desc": "清单1：项目客户复购清单",
+            "criteria": "今年未复购，但有复购线索/机会的客户"
+        },
+        "rows": [
+            {
+                "owner": "未绑定客户责任PM",
+                "count": "21家"
+            }
+        ]
+    },
+    "list_overdue_receivables": {
+        "_desc": "清单2：项目应收清单（里程碑已完成&逾期超3月）",
+        "criteria": "里程碑已完成 & 逾期 > 3个月",
+        "total_amount": "463w",
+        "rows": [
+            {
+                "owner": "张晨",
+                "amount": "138w"
+            }
+        ]
+    },
+    "list_milestone_monitoring": {
+        "_desc": "清单3：项目应收清单（里程碑未完成&未超期）",
+        "criteria": "里程碑未完成 & 未超期",
+        "total_amount": "1171w",
+        "rows": [
+            {
+                "owner": "周冠",
+                "amount": "220w"
+            }
+        ]
+    },
+    "list_no_contract": {
+        "_desc": "清单4：无合同清单",
+        "criteria": "项目绑定合同数=0",
+        "total_amount": "267w",
+        "rows": [
+            {
+                "owner": "马俊峰",
+                "amount": "85w"
+            }
+        ]
+    }
+}
