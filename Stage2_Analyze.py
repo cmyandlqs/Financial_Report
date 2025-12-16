@@ -8,10 +8,10 @@ from langchain_core.output_parsers import StrOutputParser
 load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROMPT_PATH = os.path.join(BASE_DIR, "prompts", "stage2.md")
-DATA_PATH = os.path.join(BASE_DIR, "data", "stage2.json")
+PROMPT_PATH = os.path.join(BASE_DIR, "prompts", "stage2_prompt.md")
+DATA_PATH = os.path.join(BASE_DIR, "data", "stage1&2.json")
 OUTPUTS_DIR = os.path.join(BASE_DIR, "outputs")
-OUTPUT_FILE = os.path.join(OUTPUTS_DIR, "stage2_output.md")
+OUTPUT_FILE = os.path.join(OUTPUTS_DIR, "stage2_new_output.md")
 
 
 def load_prompt(prompt_path: str) -> str:
