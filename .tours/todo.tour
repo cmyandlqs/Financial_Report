@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "todo",
+  "steps": [
+    {
+      "file": "data/stage2.json",
+      "description": "这里的逻辑有问题，需要修改\n",
+      "line": 58
+    }
+  ]
+}
