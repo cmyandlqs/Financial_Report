@@ -1,5 +1,7 @@
 import os
+import sys
 import json
+import time
 from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 from langchain_core.prompts import ChatPromptTemplate
@@ -27,6 +29,18 @@ def load_stage2_data(json_path: str) -> str:
         raise FileNotFoundError(f"未找到数据文件: {json_path}")
     with open(json_path, "r", encoding="utf-8") as f:
         return json.dumps(json.load(f), ensure_ascii=False, indent=2)
+
+
+def invoke_with_retry(chain, inputs: dict, max_retries: int = 3, delay: float = 2.0) -> str:
+    for attempt in range(1, max_retries + 1):
+        try:
+            return chain.invoke(inputs)
+        except Exception as e:
+            print(f"⚠️ 第 {attempt} 次调用 LLM 失败: {e}")
+            if attempt == max_retries:
+                print("❌ 已达到最大重试次数，终止当前阶段。")
+                raise
+            time.sleep(delay)
 
 
 def run_agent():
@@ -58,9 +72,8 @@ def run_agent():
     # 4. 执行 Chain
     print("🤖 Agent 正在进行经营分析运算（Stage2）...")
     try:
-        result = chain.invoke({"input_json": json_data_str})
+        result = invoke_with_retry(chain, {"input_json": json_data_str})
 
-        # 5. 保存结果
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write(result)
 
@@ -72,6 +85,7 @@ def run_agent():
 
     except Exception as e:
         print(f"❌ 运行出错: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

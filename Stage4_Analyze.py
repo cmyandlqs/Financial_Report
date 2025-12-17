@@ -1,5 +1,7 @@
 import os
+import sys
 import json
+import time
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain.chat_models import init_chat_model
@@ -29,6 +31,18 @@ def load_file_content(file_path: str) -> str:
         raise FileNotFoundError(f"文件不存在: {file_path}")
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
+
+
+def invoke_with_retry(chain, inputs: dict, max_retries: int = 3, delay: float = 2.0) -> str:
+    for attempt in range(1, max_retries + 1):
+        try:
+            return chain.invoke(inputs)
+        except Exception as e:
+            print(f"⚠️ 第 {attempt} 次调用 LLM 失败: {e}")
+            if attempt == max_retries:
+                print("❌ 已达到最大重试次数，终止当前阶段。")
+                raise
+            time.sleep(delay)
 
 def run_agent():
     print("🚀 正在初始化 Stage 4 (关键行动) 分析 Agent...")
@@ -80,12 +94,11 @@ def run_agent():
     # 4. 执行 Chain
     print("🤖 Agent 正在制定关键行动清单...")
     try:
-        result = chain.invoke({
-            "input_json": json_data_str,        # 变量1: 原始清单数据
-            "stage3_gap_analysis": stage3_context_str # 变量2: 上一阶段的分析结论
+        result = invoke_with_retry(chain, {
+            "input_json": json_data_str,
+            "stage3_gap_analysis": stage3_context_str
         })
 
-        # 5. 保存结果
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write(result)
 
@@ -98,9 +111,9 @@ def run_agent():
 
     except Exception as e:
         print(f"❌ 运行出错: {e}")
-        # 调试提示：如果报错缺变量，通常是 Prompt 里的 { } 没转义好
         if "Missing some input keys" in str(e):
             print("💡 提示：请检查 prompts/stage4.md 中是否将非变量的 { } 转义为 {{ }}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     run_agent()

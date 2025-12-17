@@ -1,5 +1,7 @@
 import os
+import sys
 import json
+import time
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI  # 建议使用标准库(或保持你原本的init_chat_model)
 from langchain.chat_models import init_chat_model
@@ -22,6 +24,18 @@ def load_file_content(file_path: str) -> str:
         raise FileNotFoundError(f"文件不存在: {file_path}")
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
+
+
+def invoke_with_retry(chain, inputs: dict, max_retries: int = 3, delay: float = 2.0) -> str:
+    for attempt in range(1, max_retries + 1):
+        try:
+            return chain.invoke(inputs)
+        except Exception as e:
+            print(f"⚠️ 第 {attempt} 次调用 LLM 失败: {e}")
+            if attempt == max_retries:
+                print("❌ 已达到最大重试次数，终止当前阶段。")
+                raise
+            time.sleep(delay)
 
 def run_agent():
     # 1. 读取 Prompt 原始内容 (不做 Python replace，直接交给 LangChain)
@@ -57,10 +71,8 @@ def run_agent():
     # 5. 执行 Chain
     print("🤖 Agent 正在进行经营分析运算（Stage3）...")
     try:
-        # 这里的 key "input_json" 必须对应 prompt 文件中唯一的单花括号占位符 {input_json}
-        result = chain.invoke({"input_json": json_data_str})
+        result = invoke_with_retry(chain, {"input_json": json_data_str})
 
-        # 6. 保存结果
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write(result)
 
@@ -72,6 +84,7 @@ def run_agent():
 
     except Exception as e:
         print(f"❌ 运行出错: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     run_agent()
