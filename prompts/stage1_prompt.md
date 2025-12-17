@@ -55,11 +55,12 @@
 严格按照“模版”格式输出最终文本，不要包含JSON代码块或解释性文字。
 
 # Format Template (输出模版)
-{{month_str}}待办执行效果
+## {{month_str}}待办执行效果
 {{构建的任务标题}}
-结果改善({{上一月}}月→{{本月}}月)：
-{{评价等级}} {{动态命名后的显示名称}}：{{s1_snapshot.prev_value}} → {{s1_snapshot.curr_value}} ({{差异显示}})
-{{评价等级}} {{动态命名后的显示名称}}：{{s1_snapshot.prev_value}} → {{s1_snapshot.curr_value}} ({{差异显示}})
+
+**结果改善({{上一月}}月→{{本月}}月)：**
+*   {{评价等级}} {{动态命名后的显示名称}}：{{s1_snapshot.prev_value}} → {{s1_snapshot.curr_value}} ({{差异显示}})
+*   {{评价等级}} {{动态命名后的显示名称}}：{{s1_snapshot.prev_value}} → {{s1_snapshot.curr_value}} ({{差异显示}})
 ... (依此类推)
 
 # Constraints (约束条件)
@@ -67,6 +68,8 @@
 2.  **名称严谨性**：必须严格执行“动态命名”逻辑。
 3.  **路径映射**：确保从 `metrics[i].s1_snapshot` 中提取 Stage1 所需数据。
 4.  **时间推断**：如果输入是"2025年7月"，上一月自动推断为"6月"。
+5.  **Pure Output**: 结果必须仅包含 Markdown 格式的报告内容，**严禁**包含任何开场白、结束语、```json 代码块或解释性文字。
+6.  **Format**: 主标题必须是 `##` (H2)，列表项使用 Markdown 无序列表 `* `。
 
 ---
 **Input Data:**

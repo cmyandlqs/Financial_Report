@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROMPT_PATH = os.path.join(BASE_DIR, "prompts", "stage1_prompt.md")
 DATA_PATH = os.path.join(BASE_DIR, "data", "stage1&2.json")
 OUTPUTS_DIR = os.path.join(BASE_DIR, "outputs")
-OUTPUT_FILE = os.path.join(OUTPUTS_DIR, "stage1_new1_output.md")
+OUTPUT_FILE = os.path.join(OUTPUTS_DIR, "stage1_output.md")
 
 
 def load_prompt(prompt_path: str) -> str:

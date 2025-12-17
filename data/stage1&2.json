@@ -82,7 +82,6 @@
                 "yoy_rate": 0.07,
                 "diff_value": 12.0,
                 "diff_direction": "up",
-                "context_note": "起伏基本和人员变化对应",
                 "details": []
             }
         },
@@ -92,7 +91,7 @@
             "is_core_metric": false,
             "s1_snapshot": {
                 "prev_value": "-19%",
-                "curr_value": "-20%",
+                "curr_value": "-14%",
                 "is_higher_better": true,
                 "special_category": "growth"
             },
@@ -100,7 +99,6 @@
                 "yoy_rate": -0.14,
                 "diff_value": 212.0,
                 "diff_direction": "down",
-                "context_note": "项目应收的储备能力在下滑",
                 "details": [
                     {
                         "name": "zhangchen",
@@ -135,7 +133,6 @@
                 "yoy_rate": -0.03,
                 "diff_value": -34.0,
                 "diff_direction": "down",
-                "context_note": "回款效率正常，和去年水平持平",
                 "details": [
                     {
                         "name": "23组",
@@ -159,10 +156,9 @@
                 "special_category": "routine"
             },
             "s2_analysis": {
-                "yoy_rate": 0.16,
+                "yoy_rate": -0.16,
                 "diff_value": 92.0,
                 "diff_direction": "up",
-                "context_note": "大部分是24年压款的清淤",
                 "details": [
                     {
                         "name": "23组",
