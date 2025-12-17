@@ -1,88 +1,167 @@
 {
-    "meta_info": {
-        "report_stage": "Stage 3",
-        "module": "GAPs Breakdown"
-    },
-    "input_context": {
-        "stage2_critical_shortcomings": [
+    "analysis_context": {
+        "report_period": "2025年7月",
+        "identified_shortfalls": [
             "项目签单",
             "项目回款"
         ],
-        "notes": "来源于Stage2的现状分析结论"
+        "top_level_metric": {
+            "name": "项目实施回款-k",
+            "current_value": "2600w",
+            "yoy_rate": "-18%",
+            "yoy_diff_val": "-570w",
+            "is_shortfall": true
+        }
     },
-    "gap_details": {
+    "metric_trees": {
         "项目签单": {
-            "is_star_metric": true,
-            "title_desc": "同比下降14%",
-            "diagnosis_summary": [
-                "项目新客的机会挖掘和储备不足",
-                "项目老客的机会转化效率需要加速"
-            ],
-            "factors": [
+            "node_type": "flow_formula",
+            "summary": {
+                "name": "项目签单",
+                "current_value": "1200w",
+                "yoy_rate": "-14%",
+                "yoy_diff_val": "-195w",
+                "prev_value": "1395w"
+            },
+            "drivers": [
                 {
-                    "factor_name": "(项目新购)非项目合作客户-项目机会储备",
-                    "value_change": "同期下降7%",
-                    "metric_logic": "New_Customer_Opportunity"
+                    "name": "项目签单（复购客群）",
+                    "role": "repeat_business",
+                    "current_value": "700w",
+                    "prev_value": "835w",
+                    "yoy_rate": "-16%",
+                    "yoy_diff_val": "-135w",
+                    "weight_ratio": "0.58",
+                    "sub_drivers": {
+                        "opportunity_amount": {
+                            "name": "机会实施额",
+                            "val": "1000w",
+                            "yoy": "-5%",
+                            "raw_desc": "项目机会储备"
+                        },
+                        "conversion_logic": {
+                            "name": "转化效率",
+                            "desc": "复购转化率下降10pp"
+                        }
+                    }
                 },
                 {
-                    "factor_name": "(项目复购)项目合作客户-项目签单",
-                    "value_change": "同期下降135w",
-                    "metric_logic": "Old_Customer_Signing"
+                    "name": "项目签单（非复购客群）",
+                    "role": "new_business",
+                    "current_value": "500w",
+                    "prev_value": "560w",
+                    "yoy_rate": "-11%",
+                    "yoy_diff_val": "-60w",
+                    "weight_ratio": "0.42",
+                    "sub_drivers": {
+                        "opportunity_amount": {
+                            "name": "机会实施额",
+                            "val": "2000w",
+                            "yoy": "-7%",
+                            "raw_desc": "项目机会储备"
+                        },
+                        "conversion_logic": {
+                            "name": "转化效率",
+                            "desc": "跟进失败占比提升"
+                        }
+                    }
                 }
             ]
         },
         "项目回款": {
-            "title_desc": "还有很大回收空间",
-            "diagnosis_summary": [
-                "“里程碑已完成且逾期超3月的应收”",
-                "“里程碑未完成未超期”需要优先解决"
-            ],
-            "metric_tree_root": {
-                "metric_name": "当前25年项目应收",
-                "value": "2398w",
-                "children": [
-                    {
-                        "metric_name": "里程碑已完成",
-                        "value": "621w",
-                        "children": [
-                            {
-                                "metric_name": "未逾期应收",
-                                "value": "53w"
-                            },
-                            {
-                                "metric_name": "已逾期应收",
-                                "value": "568w",
-                                "children": [
-                                    {
-                                        "metric_name": "逾期超3月应收",
-                                        "value": "463w",
-                                        "group_breakdown": "23组(123w)、33组(340w)"
-                                    },
-                                    {
-                                        "metric_name": "逾期小于3月应收",
-                                        "value": "105w"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "metric_name": "里程碑未完成",
-                        "value": "1777w",
-                        "children": [
-                            {
-                                "metric_name": "里程碑未超期应收",
-                                "value": "1171w",
-                                "group_breakdown": "23组(399w)、33组(772w)"
-                            },
-                            {
-                                "metric_name": "里程碑超期应收",
-                                "value": "606w"
-                            }
-                        ]
-                    }
-                ]
-            }
+            "node_type": "stock_structure",
+            "summary": {
+                "name": "当前25年项目应收",
+                "current_value": "2398w",
+                "gap_header": "还有很大回收空间"
+            },
+            "structure_tree": [
+                {
+                    "name": "里程碑已完成",
+                    "value": "621w",
+                    "children": [
+                        {
+                            "name": "已逾期应收",
+                            "value": "568w",
+                            "is_priority_issue": true,
+                            "children": [
+                                {
+                                    "name": "逾期超3月应收",
+                                    "value": "463w",
+                                    "is_key_gap": true,
+                                    "groups_data": "23组(123w)、33组(340w)"
+                                },
+                                {
+                                    "name": "逾期小于3月应收",
+                                    "value": "105w"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "未逾期应收",
+                            "value": "53w"
+                        }
+                    ]
+                },
+                {
+                    "name": "里程碑未完成",
+                    "value": "1777w",
+                    "children": [
+                        {
+                            "name": "里程碑未超期应收",
+                            "value": "1171w",
+                            "is_key_gap": true,
+                            "is_priority_issue": true,
+                            "groups_data": "23组(399w)、33组(772w)"
+                        },
+                        {
+                            "name": "里程碑超期应收",
+                            "value": "606w"
+                        }
+                    ]
+                }
+            ]
+        },
+        "供应商付款": {
+            "node_type": "flow_formula",
+            "summary": {
+                "name": "供应商付款",
+                "current_value": "800w",
+                "yoy_rate": "+10%"
+            },
+            "drivers": [
+                {
+                    "name": "压款付款",
+                    "val": "200w",
+                    "yoy_diff": "+150w",
+                    "desc": "主要是24年压款释放"
+                },
+                {
+                    "name": "正常付款",
+                    "val": "500w",
+                    "yoy_diff": "-20w"
+                },
+                {
+                    "name": "提前付款",
+                    "val": "100w",
+                    "yoy_diff": "0w"
+                }
+            ]
+        },
+        "内部成本": {
+            "node_type": "flow_formula",
+            "summary": {
+                "name": "内部成本",
+                "current_value": "400w",
+                "yoy_rate": "+2%"
+            },
+            "drivers": [
+                {
+                    "name": "上项目天数",
+                    "val": "3000天",
+                    "yoy": "+5%"
+                }
+            ]
         }
     }
 }

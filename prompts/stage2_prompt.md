@@ -14,8 +14,7 @@
 1.  **识别短板**：遍历 `metrics` 中 `is_core_metric: false` 的指标。
     *   检查其 `s2_analysis.yoy_rate`，若为负数（下降），标记为短板。
 2.  **构建句子**：
-    *   格式：`{{meta_info.region}}{{meta_info.department}}的关键短板仍然在{{短板指标A}}和{{短板指标B}}上，需继续在{{策略1}}和{{策略2}}上有执行策略`。
-    *   策略词从 `meta_info.strategies` 中提取。
+    *   格式：`{{meta_info.region}}{{meta_info.department}}的关键短板仍然在{{短板指标A}}和{{短板指标B}}上`。
 
 ## 第二步：生成【1、项目业绩】(Core Performance Section)
 在 `metrics` 列表中找到 `is_core_metric: true` 的那个指标（通常名为“项目实施回款-k”），基于其 `s2_analysis` 数据：

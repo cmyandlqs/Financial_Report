@@ -5,11 +5,7 @@
         "year": "2025",
         "month_str": "7月",
         "full_time_str": "2025年7月",
-        "task_context": "项目客户复购策略",
-        "strategies": [
-            "项目客户复购",
-            "里程碑应收催收"
-        ]
+        "task_context": "项目客户复购策略"
     },
     "metrics": [
         {
